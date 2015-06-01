@@ -1,5 +1,5 @@
 /**
- * File     : build.sbt
+ * File     : Direction.scala
  * Author   : Herdy Handoko
  * Created  : 2015/06/01
  * License  :
@@ -17,15 +17,28 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-organization := "com.hhandoko"
+package com.hhandoko.robotexplorer.valuetypes
 
-name := "robotexplorer"
+import enumeratum._
 
-version := "1.0.0-SNAPSHOT"
+/**
+ * The robot's compass direction.
+ */
+sealed trait Direction extends EnumEntry {
+  def heading: Int
+  def name: String
+}
 
-scalaVersion := "2.11.6"
+/**
+ * The direction's enumeration.
+ */
+case object Direction extends Enum[Direction] {
 
-libraryDependencies ++= Seq(
-  "com.beachape"  %% "enumeratum" % "1.2.1",
-  "org.scalatest" %% "scalatest"  % "2.2.5"  % "test"
-)
+  val values = findValues
+
+  case object N extends Direction { def heading = 0; def name = "North" }
+  case object E extends Direction { def heading = 90; def name = "East" }
+  case object S extends Direction { def heading = 180; def name = "South" }
+  case object W extends Direction { def heading = 270; def name = "West" }
+
+}

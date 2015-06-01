@@ -1,5 +1,5 @@
 /**
- * File     : Program.scala
+ * File     : ProgramSpec.scala
  * Author   : Herdy Handoko
  * Created  : 2015/06/01
  * License  :
@@ -19,11 +19,10 @@
  */
 package com.hhandoko.robotexplorer
 
-/**
- * The console application.
- */
-object Program extends App {
+import org.scalatest.FlatSpec
 
-  // TODO: Create app
+class ProgramSpec extends FlatSpec {
+
+  // TODO: Create tests
 
 }

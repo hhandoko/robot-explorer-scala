@@ -1,5 +1,5 @@
 /**
- * File     : ProgramSpec.scala
+ * File     : Robot.scala
  * Author   : Herdy Handoko
  * Created  : 2015/06/01
  * License  :
@@ -17,10 +17,33 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-import org.scalatest.FlatSpec
+package com.hhandoko.robotexplorer
 
-class ProgramSpec extends FlatSpec {
+import com.hhandoko.robotexplorer.valuetypes.Direction
 
-  // TODO: Create tests
+/**
+ * The robot explorer.
+ *
+ * @param xPos the current X coordinate.
+ * @param yPos the current Y coordinate.
+ * @param direction the current direction.
+ */
+case class Robot(
+  xPos: Int,
+  yPos: Int,
+  direction: Direction
+)
+
+/**
+ * The robot explorer companion object.
+ */
+object Robot {
+
+  /**
+   * Creates a new instance of Robot.
+   *
+   * @return the default Robot object.
+   */
+  def apply: Robot = this(0, 0, Direction.N)
 
 }

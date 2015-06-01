@@ -1,5 +1,5 @@
 /**
- * File     : build.sbt
+ * File     : Program.scala
  * Author   : Herdy Handoko
  * Created  : 2015/06/01
  * License  :
@@ -17,15 +17,13 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-organization := "com.hhandoko"
+package com.hhandoko.robotexplorer
 
-name := "robotexplorer"
+/**
+ * The console application.
+ */
+object Program extends App {
 
-version := "1.0.0-SNAPSHOT"
+  // TODO: Create app
 
-scalaVersion := "2.11.6"
-
-libraryDependencies ++= Seq(
-  "com.beachape"  %% "enumeratum" % "1.2.1",
-  "org.scalatest" %% "scalatest"  % "2.2.5"  % "test"
-)
+}

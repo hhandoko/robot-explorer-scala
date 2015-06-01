@@ -1,5 +1,5 @@
 /**
- * File     : build.sbt
+ * File     : Terrain.scala
  * Author   : Herdy Handoko
  * Created  : 2015/06/01
  * License  :
@@ -17,15 +17,29 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-organization := "com.hhandoko"
+package com.hhandoko.robotexplorer
 
-name := "robotexplorer"
-
-version := "1.0.0-SNAPSHOT"
-
-scalaVersion := "2.11.6"
-
-libraryDependencies ++= Seq(
-  "com.beachape"  %% "enumeratum" % "1.2.1",
-  "org.scalatest" %% "scalatest"  % "2.2.5"  % "test"
+/**
+ * The exploration terrain.
+ *
+ * @param xBound the X boundary coordinate.
+ * @param yBound the Y boundary coordinate.
+ */
+case class Terrain(
+  xBound: Int,
+  yBound: Int
 )
+
+/**
+ * The terrain companion object.
+ */
+object Terrain {
+
+  /**
+   * Creates a new instance of Terrain.
+   *
+   * @return the default Terrain object.
+   */
+  def apply: Terrain = this(10, 10)
+
+}
